@@ -1,0 +1,11 @@
+services:
+  vaccireg:
+    build: .
+    restart: unless-stopped
+    env_file: ./backend/.env
+    ports:
+      - "3000:3000"
+    volumes:
+      - vaccireg_data:/app/backend
+volumes:
+  vaccireg_data:
